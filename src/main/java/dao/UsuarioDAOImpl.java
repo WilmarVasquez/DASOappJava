@@ -83,13 +83,13 @@ public class UsuarioDAOImpl implements UsuarioDAO {
     }
 
     @Override
-    public void actualizarUsuario(Usuario usuario) {
-        String query = "UPDATE usuarios SET nombre=?, email=?, contrasena=? WHERE idUsuario=?";
+        public void actualizarUsuario(int idUsuario, String nombre, String email, String contrasena) {
+        String query = "UPDATE usuario SET nombre=?, email=?, contrasena=? WHERE idUsuario=?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, usuario.getNombre());
-            stmt.setString(2, usuario.getEmail());
-            stmt.setString(3, usuario.getContrasena());
-            stmt.setInt(4, usuario.getIdUsuario());
+            stmt.setString(1, nombre);
+            stmt.setString(2, email);
+            stmt.setString(3, contrasena);
+            stmt.setInt(4, idUsuario);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

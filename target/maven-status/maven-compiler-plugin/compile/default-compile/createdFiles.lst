@@ -1,6 +1,7 @@
 vista/Main$1.class
 model/Usuario.class
 dao/VentaDAO.class
+vista/Eperfil$1.class
 dao/VentaDAOImpl.class
 vista/DashboardJF$2.class
 as/apptareas/AppTareas.class
@@ -18,6 +19,7 @@ vista/RCompra$5.class
 vista/RVenta$5.class
 vista/RVenta$7.class
 vista/DashboardJF$1.class
+vista/DashboardJF$4.class
 model/Venta.class
 vista/RVenta$2.class
 vista/RVenta.class
@@ -29,8 +31,10 @@ vista/RegistroU$2.class
 model/DatabaseConnector.class
 vista/RCompra.class
 vista/DashboardJF.class
+vista/Eperfil.class
 vista/Main$2.class
 vista/DashboardJF$3.class
+vista/Eperfil$2.class
 vista/RCompra$2.class
 controller/VentaController.class
 vista/RVenta$6.class

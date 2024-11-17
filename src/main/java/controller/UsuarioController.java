@@ -43,9 +43,11 @@ public class UsuarioController {
 
     // Actualizar un usuario existente
     public void actualizarUsuario(int idUsuario, String nombre, String email, String contrasena) throws SQLException {
-        Usuario usuario = new Usuario(idUsuario, nombre, email, contrasena);
-        usuarioDAO.actualizarUsuario(usuario);
+    if (idUsuario <= 0 || nombre == null || email == null || contrasena == null) {
+        throw new IllegalArgumentException("Datos inválidos para actualizar el usuario.");
     }
+    usuarioDAO.actualizarUsuario(idUsuario, nombre, email, contrasena);
+}
 
     // Eliminar un usuario
     public void eliminarUsuario(int idUsuario) throws SQLException {

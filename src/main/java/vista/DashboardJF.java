@@ -6,11 +6,11 @@ package vista;
 
 import controller.CompraController;
 import controller.VentaController;
+import controller.UsuarioController;
 import model.DatabaseConnector;
 import controller.UsuarioController;
-
 import javax.swing.*;
-import java.sql.SQLException;   
+
 
 /**
  *
@@ -63,6 +63,11 @@ public class DashboardJF extends javax.swing.JFrame {
         reportebtn.setText("GENERAR REPORTE");
 
         edperfilbtn.setText("EDITAR PERFIL");
+        edperfilbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edperfilbtnActionPerformed(evt);
+            }
+        });
 
         cerrarSesionbtn.setText("CERRAR");
         cerrarSesionbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +128,13 @@ public class DashboardJF extends javax.swing.JFrame {
         RVenta rVenta = new RVenta(idUsuario, ventaController); // Pasa el controlador y el idUsuario
         rVenta.setVisible(true);
 }
-
+   // Método para abrir Eperfil
+    private void abrirEperfil() {
+        DatabaseConnector dbConnector = new DatabaseConnector();
+        UsuarioController usuarioController = new UsuarioController(dbConnector);
+        Eperfil ePerfil = new Eperfil(idUsuario, usuarioController); // Pasa el controlador y el idUsuario
+        ePerfil.setVisible(true);
+}
     
     private void comprabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comprabtnActionPerformed
         // Crear una instancia de RCompra y hacerla visible
@@ -161,6 +172,11 @@ public class DashboardJF extends javax.swing.JFrame {
            // Crear una instancia de RVenta y hacerla visible
         abrirRegistroVenta(); // Llama al método que abre RVenta
     }//GEN-LAST:event_ventabtnActionPerformed
+
+    private void edperfilbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edperfilbtnActionPerformed
+        // TODO add your handling code here:
+        abrirEperfil();
+    }//GEN-LAST:event_edperfilbtnActionPerformed
 
     /**
      * @param args the command line arguments

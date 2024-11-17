@@ -42,7 +42,8 @@ public interface UsuarioDAO {
      * Actualiza la información de un usuario existente.
      * @param usuario El objeto Usuario con los datos actualizados.
      */
-    void actualizarUsuario(Usuario usuario)throws SQLException;
+    void actualizarUsuario(int idUsuario, String nombre, String email, String contrasena) throws SQLException;
+
 
     /**
      * Elimina un usuario por su ID.
